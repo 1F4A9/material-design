@@ -14,7 +14,14 @@ const Container = styled.div`
   }
   
   input:focus ~ .slider::before {
-    background-color: rgba(155, 155, 155, 0.1);
+    background-color: ${props => props.state === 'disabled' ? 'transparent' : 'rgba(155, 155, 155, 0.2)'};
+  }
+
+  input:checked:focus ~ .slider::before {
+    background-color: rgba(98, 0, 238, 0.2);
+
+    top: -15px;
+    left: 8px;
   }
 
   input:checked ~ .slider::after {
@@ -41,7 +48,7 @@ const Container = styled.div`
     cursor: ${props => props.state === 'disabled' ? 'default' : 'pointer'};
     opacity: ${props => props.state === 'disabled' ? '0.3' : null};
     
-    transition: 0.2s;
+    transition: all 0.1s ease-in;
     
     ::after {
       content: '';
@@ -56,7 +63,7 @@ const Container = styled.div`
       border-radius: 50%;
       box-shadow: 0 2px 3px rgba(0,0,0,0.16), 0 3px 3px rgba(0,0,0,0.23);
       
-      transition: 0.2s;
+      transition: all 0.1s ease-in;
     }
     
     ::before {
@@ -65,12 +72,14 @@ const Container = styled.div`
       display: block;
       position: absolute;
       top: -15px;
-      left: -23px;
+      left: ${props => props.state === 'focused on' ? '8px' : '-23px'};
       height: 50px;
       width: 50px;
       border-radius: 50%;
 
-      transition: 0.2s;
+      background-color: ${props => props.state === 'focused' ? 'rgba(155, 155, 155, 0.2)' : 'transparent'};
+
+      transition: all 0.1s ease-in;
     }
   }
 
@@ -78,7 +87,6 @@ const Container = styled.div`
     font-size: 14px;
     color: rgb(125, 125, 125);
   }
-
 `;
 
 export default function Switch({ state }) {
@@ -86,7 +94,7 @@ export default function Switch({ state }) {
   if (state === 'disabled') {
     slider = <input type="checkbox" checked={false} required/>
   } else if (state === 'focused') {
-    slider = <input type="checkbox" checked={true} required/>
+    slider = <input type="checkbox" checked={false} required/>
   } else {
     slider = <input type="checkbox" required/>
   }

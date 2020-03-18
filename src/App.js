@@ -31,7 +31,6 @@ const Container = styled.div`
 
   .switch-container {
     flex-direction: row;
-    background-color: #f7f7f7;
   }
   
   .textfield-container > div,
@@ -46,7 +45,7 @@ function App() {
     <Container>
       <GlobalStyle />
       <div className="textfield-container">
-        <TextField placeholder={'Firstname'} state={'enabled'}/>
+        <TextField placeholder={'Firstname'} state={'normal'}/>
         <TextField placeholder={'Lastname'} state={'focused'}/>
         <TextField placeholder={'Disabled'} state={'disabled'}/>
       </div>
