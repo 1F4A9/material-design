@@ -72,7 +72,7 @@ const Container = styled.div`
       display: block;
       position: absolute;
       top: -15px;
-      left: ${props => props.state === 'focused on' ? '8px' : '-23px'};
+      left: -23px;
       height: 50px;
       width: 50px;
       border-radius: 50%;
