@@ -5,6 +5,7 @@ import GlobalStyle from './GlobalStyle';
 import TextField from './components/TextField';
 import Switch from './components/Switch';
 import Checkbox from './components/Checkbox';
+import RadioButton from './components/RadioButton';
 
 const Container = styled.div`
   height: 100vh;
@@ -17,7 +18,8 @@ const Container = styled.div`
 
   .textfield-container,
   .switch-container,
-  .checkbox-container {
+  .checkbox-container,
+  .radio-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -33,7 +35,8 @@ const Container = styled.div`
 
   .textfield-container:hover,
   .switch-container:hover,
-  .checkbox-container:hover {
+  .checkbox-container:hover,
+  .radio-container:hover {
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
   }
 
@@ -42,13 +45,15 @@ const Container = styled.div`
   }
 
   .switch-container,
-  .checkbox-container {
+  .checkbox-container,
+  .radio-container {
     flex-direction: row;
   }
   
   .textfield-container > div,
   .switch-container > div,
-  .checkbox-container > div {
+  .checkbox-container > div,
+  .radio-container > div {
     flex: 1;
     margin: 50px 0px;
   }
@@ -72,6 +77,11 @@ function App() {
         <Checkbox state={'interactive'}/>
         <Checkbox state={'focused'}/>
         <Checkbox state={'disabled'}/>
+      </div>
+      <div className="radio-container">
+        <RadioButton state={'interactive'}/>
+        <RadioButton state={'focused'}/>
+        <RadioButton state={'disabled'}/>
       </div>
     </Container>
   );
