@@ -12,6 +12,15 @@ const Container = styled.div`
     width: 0;
     opacity: 0;
   }
+
+  .slider:hover::before {
+    background-color: rgba(155, 155, 155, 0.2);
+  }
+
+  input:checked ~ .slider:hover::before {
+    background-color: rgba(98, 0, 238, 0.2);
+    left: 8px;
+  }
   
   input:focus ~ .slider::before {
     background-color: ${props => props.state === 'disabled' ? 'transparent' : 'rgba(155, 155, 155, 0.2)'};
@@ -78,8 +87,6 @@ const Container = styled.div`
       border-radius: 50%;
 
       background-color: ${props => props.state === 'focused' ? 'rgba(155, 155, 155, 0.2)' : 'transparent'};
-
-      transition: all 0.1s ease-in;
     }
   }
 
