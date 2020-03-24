@@ -24,7 +24,7 @@ const Container = styled.div`
   }
 
   input:checked ~ .radio > .outer-circle {
-    border-color: #6200ee;
+    border-color: ${props => props.state === 'disabled' ? '#757575' : '#6200ee'};
   }
 
   .radio {
@@ -67,8 +67,9 @@ const Container = styled.div`
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    background-color: #6200ee;
+    background-color: ${props => props.state === 'disabled' ? '#757575' : '#6200ee'};
     transform: scale(0, 0);
+    opacity: ${props => props.state === 'disabled' ? 0.3 : 1};
 
     transition: transform 0.1s linear;
   }
@@ -76,21 +77,16 @@ const Container = styled.div`
   p {
     font-size: 14px;
     color: rgb(125, 125, 125);
+    text-align: center;
   }
 `;
 
 export default function RadioButton({ state }) {
-  let radioButtonJSX = null;
-  if (state === 'disabled') {
-    radioButtonJSX = <input type="radio" name="demo" checked={false} required/>
-  } else {
-    radioButtonJSX = <input type="radio" name="demo" required/>
-  }
   return (
     <Container state={state}>
-      <p>{state}</p>
+      <p>{state}<br/>(interactive)</p>
       <label>
-        {radioButtonJSX}
+        <input type="radio" name="demo" required/>
         <div className="radio">
           <div className="outer-circle"></div>
           <div className="inner-circle"></div>

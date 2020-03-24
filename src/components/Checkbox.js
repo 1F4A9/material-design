@@ -28,8 +28,8 @@ const Container = styled.div`
   }
   
   input:checked ~ .box {
-    background-color: #6200ee;
-    border: 2px solid #6200ee;
+    background-color: ${props => props.state === 'disabled' ? '#757575' : '#6200ee'};
+    border: ${props => props.state === 'disabled' ? '2px solid #757575' : '2px solid #6200ee'};
   }
   
   .box {
@@ -78,18 +78,11 @@ const Container = styled.div`
 `;
 
 export default function Checkbox({ state }) {
-  let checkboxJSX = null;
-  if (state === 'disabled') {
-    checkboxJSX = <input type="checkbox" required checked={false}/>
-  } else {
-    checkboxJSX = <input type="checkbox" required/>
-  }
-
   return (
     <Container state={state}>
-      <p>{state}</p>
+      <p>{state}<br/>(interactive)</p>
       <label>
-        {checkboxJSX}
+      <input type="checkbox" required/>
         <div className="box">
           <div className="focus-effect"></div>
           <i className="fas fa-check"></i>

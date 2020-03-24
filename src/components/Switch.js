@@ -14,11 +14,11 @@ const Container = styled.div`
   }
 
   .slider:hover::before {
-    background-color: rgba(155, 155, 155, 0.2);
+    background-color: ${props => props.state === 'disabled' ? 'transparent' : 'rgba(155, 155, 155, 0.2)'};
   }
 
   input:checked ~ .slider:hover::before {
-    background-color: rgba(98, 0, 238, 0.2);
+    background-color: ${props => props.state === 'disabled' ? 'transparent' : 'rgba(98, 0, 238, 0.2)'};
     left: 8px;
   }
 
@@ -32,7 +32,7 @@ const Container = styled.div`
   }
 
   input:checked:focus ~ .slider::before {
-    background-color: rgba(98, 0, 238, 0.2);
+    background-color: ${props => props.state === 'disabled' ? 'transparent' : 'rgba(98, 0, 238, 0.2)'};
 
     left: 8px;
   }
@@ -98,26 +98,16 @@ const Container = styled.div`
   p {
     font-size: 14px;
     color: rgb(125, 125, 125);
+    text-align: center;
   }
 `;
 
 export default function Switch({ state }) {
-  let slider = null;
-  if (state === 'disabled') {
-    slider = <input type="checkbox" checked={false} required/>
-  } else if (state === 'focused') {
-    slider = <input type="checkbox" required/>
-  } else {
-    slider = <input type="checkbox" required/>
-  }
-
-
-
   return (
     <Container state={state}>
-      <p>{state}</p>
+      <p>{state}<br/>(interactive)</p>
       <label>
-        {slider}
+        <input type="checkbox" required/>
         <div className="slider"></div>
       </label>
     </Container>

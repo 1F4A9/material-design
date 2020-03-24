@@ -195,7 +195,7 @@ export default function TextField({ placeholder, state }) {
   if (state === 'disabled') {
     textFieldJSX = (
       <DisabledContainer state={state}>
-        <p>{state}</p>
+        <p>{state}<br/>(interactive)</p>
         <div className="textfield">
           <label>{placeholder}</label>
         </div>
@@ -204,7 +204,7 @@ export default function TextField({ placeholder, state }) {
   } else if (state ==='focused') {
     textFieldJSX = (
       <FocusContainer state={state}>
-        <p>{state}</p>
+        <p>{state}<br/>(interactive)</p>
         <div className="textfield">
           <input type="text" required/>
           <label>{placeholder}</label>
@@ -217,7 +217,7 @@ export default function TextField({ placeholder, state }) {
   } else {
     textFieldJSX = (
       <Container state={state}>
-        <p>{state}</p>
+        <p>{state}<br/>(interactive)</p>
         <div className="textfield">
           <input type="text" required/>
           <label>{placeholder}</label>

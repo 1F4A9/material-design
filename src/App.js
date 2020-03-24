@@ -64,22 +64,22 @@ function App() {
     <Container>
       <GlobalStyle />
       <div className="textfield-container">
-        <TextField placeholder={'Firstname'} state={'interactive'}/>
+        <TextField placeholder={'Firstname'} state={'default'}/>
         <TextField placeholder={'Lastname'} state={'focused'}/>
         <TextField placeholder={'Disabled'} state={'disabled'}/>
       </div>
       <div className="switch-container">
-        <Switch state={'interactive'}/>
+        <Switch state={'default'}/>
         <Switch state={'focused'}/>
         <Switch state={'disabled'}/>
       </div>
       <div className="checkbox-container">
-        <Checkbox state={'interactive'}/>
+        <Checkbox state={'default'}/>
         <Checkbox state={'focused'}/>
         <Checkbox state={'disabled'}/>
       </div>
       <div className="radio-container">
-        <RadioButton state={'interactive'}/>
+        <RadioButton state={'default'}/>
         <RadioButton state={'focused'}/>
         <RadioButton state={'disabled'}/>
       </div>
