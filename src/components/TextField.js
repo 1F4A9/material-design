@@ -195,7 +195,7 @@ export default function TextField({ placeholder, state }) {
   if (state === 'disabled') {
     textFieldJSX = (
       <DisabledContainer state={state}>
-        <p>{state}<br/>(interactive)</p>
+        <p>{state}</p>
         <div className="textfield">
           <label>{placeholder}</label>
         </div>
