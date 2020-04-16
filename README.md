@@ -8,8 +8,6 @@ Go to http://localhost:3000.
 
 ## Assignment instructions
 In this exercise you will be creating a simple UI component library, implementing four form elements from Material Design. We will be calling the library "MD Simple".<br/>
-You are also allowed to implement the component without using any library with pure CSS and JavaScript.<br/>
-The elements to be implemented are
 <ul>
   <li>Text field, https://material.io/components/text-fields</li>
   <li>Switch, https://material.io/components/selection-controls#switches</li>
