@@ -7,6 +7,10 @@ In this application I created a simple UI component library by implementing four
 - Run `npm start`.
 - Go to `http://localhost:3000`.
 
+## Technologies
+* react
+* styled-components
+
 ## The elements implemented are
 - https://material.io/design/components/text-fields.html
 - https://material.io/design/components/selection-controls.html#switches
